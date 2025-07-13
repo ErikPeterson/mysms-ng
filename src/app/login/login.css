@@ -1,0 +1,25 @@
+form{
+	display: block;
+	padding: 2em;
+}
+
+button{
+	display: block;
+	background-color: white;
+	border: 1px solid black;
+	padding: 1em;
+	border-radius: 15px;
+	font-weight: bold;
+	margin: 2em 0;
+}
+
+label{
+	display: block;
+	padding: 1em 0 1em 0;
+}
+
+input {
+	width: 500px;
+	max-width: 100%;
+	padding: 1em;
+}

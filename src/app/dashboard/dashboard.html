@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="messenger">
+		<div class="messenger-form">
+			<form (submit)="send($event)">
+				<div class="phone-number">
+					<label> Phone Number</label>
+					<input type="text" [formControl]="phone" name="phone">
+				</div>
+				<div class="new-message">
+				<textarea [formControl]="messagetext" name="messagetext" maxlength="250ess"></textarea>
+				</div>
+				<div class="send">
+					<button type="submit" [disabled]="disabled">Send</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="messages">
+		<ul class="message-list">
+		@for (item of data(); track item.sid){
+			<li class="message">
+				<div class="message-body">
+					<div class="message-header">
+						{{ item.phone_number }}
+					</div>
+					<div class="message-content">
+						{{ item.content }}
+					</div>
+					<div class="message-footer">
+						{{ item.sent_at }}
+					</div>
+				</div>
+			</li>
+		}
+		</ul>
+	</div>
+</div>

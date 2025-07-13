@@ -1,0 +1,78 @@
+.messenger, .messages{
+	display: block;
+	width: calc(50% - 4.5em);
+	height: calc(100% - 6em);
+	padding: 0;
+	position: absolute;
+	top: 3em;
+	overflow: hidden;
+}
+
+.messenger{
+	left: 3em;
+}
+
+.messages{
+	right: 3em;
+}
+
+.messages{
+	overflow-y: scroll;
+}
+
+.message-list{
+	display: block;
+	padding: 1em;
+	overflow-y: scroll;
+	max-height: 100%;
+	width: 100%;
+}
+
+.message{
+	margin: 0 0 1em 0;
+	list-style-type: none;
+	width: 100%;
+	height: auto;
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 15px;
+}
+
+.messenger-form{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.phone-number{
+	position: absolute;
+	padding-bottom: 1em;
+	height: 4em;
+	top: 0;
+	width: 100%;
+}
+.new-message{
+	position: absolute;
+	top: 4em;
+	height: calc(100% - 8em);
+	width: 100%;
+}
+
+.new-message textarea{
+	resize: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1em;
+}
+
+.send{
+	position: absolute;
+	bottom: 0;
+	padding-top: 1em;
+	display: block;
+	width: 100%;
+	height: 4em;
+}

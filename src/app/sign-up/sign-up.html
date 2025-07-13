@@ -1,0 +1,16 @@
+<div class="container">
+  <form (submit)="onSubmit($event)">
+    <h2>Sign Up</h2>
+    <h3>{{error}}</h3>
+    <label for="email">Email:</label>
+    <input type="text" id="email" [formControl]="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" [formControl]="password" name="password" required>
+
+    <label for="password">Password Confirmation:</label>
+    <input type="password" id="password_confirmation" [formControl]="password_confirmation" name="password_confirmation" required>
+
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
