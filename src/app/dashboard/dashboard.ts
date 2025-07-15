@@ -34,6 +34,7 @@ export class Dashboard {
 
   phone = new FormControl("");
   messagetext = new FormControl("");
+  messagelength: number = 0;
 
   protected loadData(){
     this.http.get<{user: {messages?: Message[]}}>(`${API_URL}/users/me`, { 
@@ -48,6 +49,10 @@ export class Dashboard {
 
   protected ngOnInit(){
     this.loadData();
+
+    this.messagetext.valueChanges.subscribe(name => {
+      this.messagelength = name ? name.length : 0;
+    });
   }
 
   send(event: any){

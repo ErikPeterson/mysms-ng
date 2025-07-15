@@ -1,31 +1,33 @@
-.messenger, .messages{
-	display: block;
-	width: calc(50% - 4.5em);
-	height: calc(100% - 6em);
-	padding: 0;
+:host{
 	position: absolute;
-	top: 3em;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 }
 
-.messenger{
-	left: 3em;
+.row{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
 }
 
-.messages{
-	right: 3em;
-}
-
-.messages{
-	overflow-y: scroll;
+.messenger, .messages{
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+	overflow: hidden;
+	padding: 2em;
 }
 
 .message-list{
-	display: block;
-	padding: 1em;
-	overflow-y: scroll;
-	max-height: 100%;
-	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: auto; /* Allows scrolling when content overflows */
+	scrollbar-width: none; /* For Firefox */
+  	-ms-overflow-style: none; /* For Internet Explorer and older Edge */
 }
 
 .message{
@@ -38,41 +40,82 @@
 	border-radius: 15px;
 }
 
+.message-header{
+	font-size: .75em;
+	font-weight: bold;
+}
+
+.message-content{
+	padding: 1em 0 1em 0;
+}
+
+.message-footer{
+	color: rgb(45%, 45%, 45%);
+	font-size: .75em;
+}
+
 .messenger-form{
-	display: block;
+	display: flex;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 }
 
 .phone-number{
-	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
 	padding-bottom: 1em;
-	height: 4em;
-	top: 0;
-	width: 100%;
-}
-.new-message{
-	position: absolute;
-	top: 4em;
-	height: calc(100% - 8em);
+	height: auto;
 	width: 100%;
 }
 
-.new-message textarea{
-	resize: none;
+.new-message{
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	border: 1px solid black;
+	border-radius: 15px;
+}
+
+.new-message-inner{
+	display: flex;
+	padding: 1em;
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 1em;
+	flex-direction: column;
 }
 
-.send{
-	position: absolute;
-	bottom: 0;
-	padding-top: 1em;
-	display: block;
+.new-message-inner textarea{
 	width: 100%;
-	height: 4em;
+	display: flex;
+	resize: none;
+	border: 0;
+	flex-grow: 1;
+	flex-direction: row;
+}
+
+.new-message-inner textarea:focus{
+	outline: none;
+}
+
+.new-message-inner .send{
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.new-message-inner .send button{
+	margin: 0;
+	flex-direction: column;
+}
+
+.new-message-inner .send .messagelength{
+	flex-direction: column;
+	line-height: 3rem;
+	vertical-align: center;
+	font-size: .75em;
+	color: rgb(45%, 45%, 45%);
 }

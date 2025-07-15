@@ -1,19 +1,19 @@
-<div class="container">
+<div class="row">
 	<div class="messenger">
-		<div class="messenger-form">
-			<form (submit)="send($event)">
-				<div class="phone-number">
-					<label> Phone Number</label>
-					<input type="text" [formControl]="phone" name="phone">
+		<form (submit)="send($event)" class="messenger-form">
+			<div class="phone-number">
+				<label> Phone Number</label><br />
+				<input type="text" [formControl]="phone" name="phone">
+			</div>
+			<div class="new-message">
+				<div class="new-message-inner">
+					<textarea [formControl]="messagetext" name="messagetext" maxlength="250"></textarea>
+					<div class="send">
+						<button type="submit" [disabled]="disabled">Send</button> <span class="messagelength">{{ messagelength }}/250</span>
+					</div>
 				</div>
-				<div class="new-message">
-				<textarea [formControl]="messagetext" name="messagetext" maxlength="250ess"></textarea>
-				</div>
-				<div class="send">
-					<button type="submit" [disabled]="disabled">Send</button>
-				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
 	<div class="messages">
 		<ul class="message-list">
