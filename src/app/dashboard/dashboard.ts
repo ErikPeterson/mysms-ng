@@ -35,6 +35,7 @@ export class Dashboard {
   phone = new FormControl("");
   messagetext = new FormControl("");
   messagelength: number = 0;
+  buttontext: string = "Send";
 
   protected loadData(){
     this.http.get<{user: {messages?: Message[]}}>(`${API_URL}/users/me`, { 
@@ -57,6 +58,8 @@ export class Dashboard {
 
   send(event: any){
     event.preventDefault();
+    this.disabled = true;
+    this.buttontext = "Sending...";
     this.http.post(
       `${API_URL}/messages`,
       { 
@@ -72,6 +75,7 @@ export class Dashboard {
         }
       }
     ).subscribe((response: any) => {
+      this.disabled = false;
       let message: any = response.message;
       if(message){
         this.data.update((values: any) => { return [message, ...values]})

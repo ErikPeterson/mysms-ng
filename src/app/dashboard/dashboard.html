@@ -9,7 +9,7 @@
 				<div class="new-message-inner">
 					<textarea [formControl]="messagetext" name="messagetext" maxlength="250"></textarea>
 					<div class="send">
-						<button type="submit" [disabled]="disabled">Send</button> <span class="messagelength">{{ messagelength }}/250</span>
+						<button type="submit" [disabled]="disabled">{{buttontext}}</button> <span class="messagelength">{{ messagelength }}/250</span>
 					</div>
 				</div>
 			</div>
